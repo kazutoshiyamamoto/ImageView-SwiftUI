@@ -27,3 +27,7 @@ struct DefaultImageCache: ImageCache {
     }
 }
 
+struct ImageCacheKey: EnvironmentKey {
+    static let defaultValue: ImageCache = DefaultImageCache()
+}
+
