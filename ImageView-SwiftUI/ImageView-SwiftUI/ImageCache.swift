@@ -31,3 +31,13 @@ struct ImageCacheKey: EnvironmentKey {
     static let defaultValue: ImageCache = DefaultImageCache()
 }
 
+extension EnvironmentValues {
+    var imageCache: ImageCache {
+        get {
+            self[ImageCacheKey.self]
+        }
+        set(image) {
+            self[ImageCacheKey.self] = image
+        }
+    }
+}
