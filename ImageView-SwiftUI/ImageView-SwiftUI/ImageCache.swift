@@ -14,3 +14,16 @@ protocol ImageCache {
     subscript(key: AnyObject) -> UIImage? { get set }
 }
 
+struct DefaultImageCache: ImageCache {
+    var cache = NSCache<AnyObject, UIImage>()
+    
+    subscript(key: AnyObject) -> UIImage? {
+        get {
+            cache.object(forKey: key)
+        }
+        set(image) {
+            cache.setObject(image!, forKey: key)
+        }
+    }
+}
+
