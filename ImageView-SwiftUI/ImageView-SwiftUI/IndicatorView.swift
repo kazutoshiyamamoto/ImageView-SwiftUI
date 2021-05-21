@@ -13,6 +13,7 @@ struct IndicatorView: UIViewRepresentable {
     func makeUIView(context: Context) -> UIActivityIndicatorView {
         let indicatorView = UIActivityIndicatorView(style: .medium)
         indicatorView.hidesWhenStopped = true
+        
         return indicatorView
     }
     
